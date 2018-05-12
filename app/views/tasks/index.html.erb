@@ -1,0 +1,10 @@
+<h1>Index of Tasks Page</h1>
+
+
+<% @tasks.each do |task| %>
+  <h4><%= link_to task.title, task_path(task)%></h4>
+  <p><%= task.details %></p>
+  <p><%= task.completed == true ? "Completed" : "Incomplete" %></p>
+<% end %>
+
+<h3 class=btn-primary><%= link_to "New Task", new_task_path%></h3>
